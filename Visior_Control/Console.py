@@ -3,12 +3,12 @@ import tkinter as Tk
 from time import sleep
 from tkinter import *
 
-from AutoMode import *
+from AutomaticMode import *
 from src.Modules.MessageBox import inputBox, messagebox
 from src.Modules.settings import Settings
-from src.Modules.SystemTest import SensorsTest
+from src.Modules.Testing.SystemTest import SystemTest
 from src.Services.Security.fileZipper import *
-from TkinterCam import *
+from ControlledMode import *
 
 #from UpdateConsole import Updates
 
@@ -110,7 +110,7 @@ class Console:
             if self.window:
                 self.window.destroy()
                 print("Jumped to TkinterCam  from Console .. ")
-                AutoModeController().StreamScreen()
+                AutomaticMode().StreamScreen()
         except Exception as e:
             print(f"Exception in <Function> RcMode - <Class> Console - <File> Console.py --> {e}")
             pass
@@ -143,8 +143,8 @@ class Console:
             if self.window:
                 self.window.destroy()
                 print("Jumped to System Test  from Console .. ")
-                #SystemTest()
-                SensorsTest()
+                SystemTest()
+                #SensorsTest()
         except Exception as e:
             print(f"Exception in <Function> sysTest - <Class> Console - <File> Console.py --> {e}")
             pass
